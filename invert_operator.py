@@ -8,10 +8,10 @@ def get_last_translation_operator(context):
     return None
 
 class ApplyInverseTranslation(bpy.types.Operator):
-    bl_idname = 'object.apply_inverse_translation'
-    bl_label = 'Invert last translation'
-    bl_description = 'Apply the inverse of the last used translation to the selected bone'
-    bl_options = {'REGISTER', 'UNDO'}
+    bl_idname = "object.apply_inverse_translation"
+    bl_label = "Invert last translation"
+    bl_description = "Apply the inverse of the last used translation to the selected bone"
+    bl_options = {"REGISTER", "UNDO"}
 
     @classmethod
     def poll(self, context):
@@ -31,10 +31,10 @@ class ApplyInverseTranslation(bpy.types.Operator):
             constraint_axis = operator.properties.constraint_axis,
             use_accurate = operator.properties.use_accurate,
         )
-        return {'FINISHED'}
+        return {"FINISHED"}
     
     def invoke(self, context, event):
-        print('invoke')
+        print("invoke")
         return self.execute(context)
 
 def menu_func(self, context):
